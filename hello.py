@@ -1,7 +1,6 @@
 from cgi import parse_qs, escape
 
-def wsgi_application(environ, start_response):
-    # бизнес-логика
+def application(environ, start_response):
     status = '200 OK'
     headers = [
             ('Content-Type', 'text/plain')
