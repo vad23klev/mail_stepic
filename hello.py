@@ -6,10 +6,11 @@ def wsgi_application(environ, start_response):
     headers = [
             ('Content-Type', 'text/plain')
             ]
-    parameters = parse_qs(environ.get('QUERY_STRING', ''))
+    parameters = environ.get('QUERY_STRING', '')
+    parameters = parameters.split('&')
     body = ''
     for key in parameters:
-            body += key + '=' + parameters[key][0] + '\n'
+            body += key + '\n'
     print(parameters)
     body = str.encode(body)
     start_response(status, headers )
