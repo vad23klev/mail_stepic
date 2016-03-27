@@ -16,11 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
+
 from h404 import r404
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^question/', include('qa.urls')),
-    url(r'^$/', r404),
+    url(r'^$', r404),
     url(r'^login/', r404),
     url(r'^ask/', r404),
     url(r'^signup/', r404),
